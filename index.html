@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surface Studio — Manufacture contemporaine · Sidi Ghanem, Marrakech</title>
+<meta name="description" content="Surface Studio. Manufacture contemporaine de décoration imprimée à Sidi Ghanem, Marrakech. Papier peint, vinyle, acrylique, tissu — technologie HP Latex 630 W.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:        #1C1C1A;
+  --ink-soft:   #2D2D2A;
+  --lime:       #F4F0E8;
+  --lime-deep:  #EBE5D8;
+  --sand:       #DCD2BD;
+  --ochre:      #C9A96E;
+  --ochre-soft: #D9BD86;
+  --stone:      #A39E92;
+  --line:       rgba(28,28,26,0.10);
+  --line-soft:  rgba(28,28,26,0.06);
+  --fd: 'Fraunces', Georgia, serif;
+  --fb: 'Inter', -apple-system, system-ui, sans-serif;
+  --pad-x: clamp(1.5rem, 4vw, 5rem);
+  --max-width: 1480px;
+  --max-narrow: 1180px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;}
+body{
+  background:var(--lime);
+  color:var(--ink);
+  font-family:var(--fb);
+  overflow-x:hidden;
+  font-weight:400;
+  line-height:1.6;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+::selection{background:var(--ochre);color:var(--ink);}
+
+/* Fallback pattern pour images */
+.img-fallback{
+  background:var(--sand);
+  background-image:
+    linear-gradient(135deg, var(--lime-deep) 0%, var(--sand) 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23C9A96E' stroke-width='0.6' opacity='0.35' transform='translate(40 40) rotate(45) translate(-20 -20)'><rect x='0' y='0' width='20' height='20'/><rect x='20' y='0' width='20' height='20'/><rect x='0' y='20' width='20' height='20'/><rect x='20' y='20' width='20' height='20'/></g></svg>");
+  background-blend-mode:overlay;
+  background-size:cover, 80px 80px;
+}
+
+/* ═══════════════ TYPO ═══════════════ */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--fb);font-weight:500;font-size:.7rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ochre);
+}
+.eyebrow.centered{justify-content:center;}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--ochre);}
+.eyebrow.both::after{content:'';width:24px;height:1px;background:var(--ochre);}
+
+.h-section{
+  font-family:var(--fd);font-weight:300;
+  font-size:clamp(2rem,3.8vw,3.4rem);
+  line-height:1.08;letter-spacing:-.018em;
+  color:var(--ink);
+}
+.h-section em{font-style:italic;}
+.muted{color:var(--stone);}
+
+/* ═══════════════ NAV ═══════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.85rem var(--pad-x);
+  background:transparent;
+  transition:background .4s ease, backdrop-filter .4s, padding .3s, border-color .4s, color .4s;
+  border-bottom:1px solid transparent;
+}
+
+/* Nav transparent au-dessus du hero (image en fond) */
+nav.over-hero{
+  background:rgba(28,28,26,0.25);
+  backdrop-filter:blur(12px) saturate(140%);
+  -webkit-backdrop-filter:blur(12px) saturate(140%);
+}
+nav.over-hero .nav-logo,
+nav.over-hero .nav-links a{color:var(--lime);}
+nav.over-hero .nav-cta{color:#b8922a;border:none;}
+nav.over-hero .burger span{background:var(--lime);}
+
+nav.scrolled{
+  background:rgba(244,240,232,0.94);
+  backdrop-filter:blur(20px) saturate(140%);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);
+  border-bottom-color:var(--line);
+  padding:1rem var(--pad-x);
+}
+nav.scrolled .nav-logo,
+nav.scrolled .nav-links a{color:var(--ink);}
+nav.scrolled .nav-cta{color:#b8922a;border:none;}
+nav.scrolled .burger span{background:var(--ink);}
+
+.nav-logo{display:flex;align-items:center;gap:14px;color:var(--lime);transition:color .4s;}
+.nav-logo svg{flex-shrink:0;}
+.nav-logo-text{font-family:var(--fd);font-size:1.15rem;font-weight:400;letter-spacing:.005em;line-height:1;text-transform:none;}
+.nav-logo-text em{font-style:italic;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+.nav-links a{
+  font-family:var(--fb);font-weight:500;font-size:.72rem;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--lime);position:relative;padding:6px 0;
+  transition:color .3s;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;width:0;height:1px;
+  background:var(--ochre);transition:width .35s ease;
+}
+.nav-links a:hover{color:var(--ochre);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{
+  font-family:var(--fb);font-weight:500;font-size:.72rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:#b8922a;background:transparent;
+  padding:.85rem 0;border:none;
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;
+  transition:color .3s, text-underline-offset .3s;
+}
+.nav-cta:hover{background:transparent;border:none;color:var(--ochre);text-underline-offset:8px;}
+.burger{display:none;width:34px;height:34px;flex-direction:column;justify-content:center;align-items:center;gap:5px;}
+.burger span{width:22px;height:1.5px;background:var(--lime);transition:transform .3s, opacity .3s, background .3s;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+.nav-mobile{
+  position:fixed;top:0;left:0;right:0;bottom:0;background:var(--lime);z-index:150;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  padding-top:80px;
+  transform:translateY(-100%);
+  transition:transform .5s cubic-bezier(.7,0,.3,1);
+}
+.nav-mobile.open{transform:translateY(0);}
+.nav-mobile a{font-family:var(--fd);font-size:2rem;color:var(--ink);font-weight:400;}
+.nav-mobile a em{font-style:italic;color:var(--ochre);}
+
+/* ═══════════════ HERO IMAGE PLEIN ÉCRAN ═══════════════ */
+.hero{
+  height:100vh;height:100svh;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  text-align:center;
+}
+.hero-inner{
+  flex:1;min-height:0;
+  display:flex;align-items:center;justify-content:center;
+  padding:clamp(84px,11vh,132px) var(--pad-x) clamp(20px,4vh,44px);
+  position:relative;z-index:3;
+  overflow:hidden;
+}
+.hero-content{will-change:transform;}
+
+/* Image background plein écran */
+.hero-bg{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  z-index:1;
+}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;
+  animation:slowZoom 18s ease-out forwards;
+}
+
+/* Overlay sombre pour lisibilité du texte */
+.hero-overlay{
+  position:absolute;inset:0;z-index:2;
+  background:
+    linear-gradient(135deg, rgba(28,28,26,0.44) 0%, rgba(28,28,26,0.28) 50%, rgba(28,28,26,0.52) 100%),
+    radial-gradient(ellipse at center, rgba(28,28,26,0.16) 0%, rgba(28,28,26,0.4) 100%);
+}
+
+/* Pattern losanges subtil sur l'overlay */
+.hero-overlay::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110' viewBox='0 0 110 110'><g fill='none' stroke='%23C9A96E' stroke-width='0.5' opacity='0.15' transform='translate(55 55) rotate(45) translate(-27.5 -27.5)'><rect x='0' y='0' width='27.5' height='27.5'/><rect x='27.5' y='0' width='27.5' height='27.5'/><rect x='0' y='27.5' width='27.5' height='27.5'/><rect x='27.5' y='27.5' width='27.5' height='27.5'/></g></svg>");
+  background-size:110px 110px;pointer-events:none;
+}
+
+.hero-content{
+  position:relative;z-index:3;
+  max-width:980px;
+  display:flex;flex-direction:column;align-items:center;
+  color:var(--lime);
+}
+
+.hero-logo-big{
+  width:96px;height:96px;
+  margin-bottom:1.25rem;
+  color:var(--lime);
+  filter:drop-shadow(0 2px 24px rgba(28,28,26,.25));
+  will-change:transform,opacity;
+}
+.hero-logo-big > g{
+  opacity:0;
+  animation:fadeIn 1.2s cubic-bezier(.2,.8,.2,1) .25s forwards;
+}
+@keyframes logoEnter{
+  0%{opacity:0;transform:scale(.4) rotate(-6deg);}
+  60%{opacity:1;transform:scale(1.04) rotate(0);}
+  100%{opacity:1;transform:scale(1);}
+}
+@keyframes logoDraw{
+  to{stroke-dashoffset:0;}
+}
+@media(max-width:600px){
+  .hero-logo-big{width:72px;height:72px;}
+}
+
+.hero-eyebrow{
+  margin-bottom:1rem;
+  opacity:0;animation:fadeUp .9s .45s forwards;
+  color:var(--ochre-soft);
+}
+.hero-eyebrow::before,
+.hero-eyebrow::after{background:var(--ochre-soft);}
+
+.hero-title{
+  font-family:var(--fd);font-weight:300;
+  font-size:clamp(2.2rem, 4.8vw, 4.6rem);
+  line-height:1;letter-spacing:-.025em;
+  color:var(--lime);margin-bottom:1.25rem;
+  opacity:0;animation:fadeUp 1s .6s forwards;
+  text-shadow:0 2px 24px rgba(28,28,26,0.15);
+}
+.hero-title em{font-style:italic;font-weight:300;}
+.hero-title .gold{color:var(--ochre-soft);font-style:italic;}
+
+.hero-divider{
+  display:flex;align-items:center;justify-content:center;
+  gap:14px;margin-bottom:1rem;
+  opacity:0;animation:fadeUp .9s .75s forwards;
+}
+.hero-divider .line{width:48px;height:1px;background:var(--ochre-soft);}
+.hero-divider .diamond{
+  width:8px;height:8px;background:var(--ochre-soft);
+  transform:rotate(45deg);
+}
+
+.hero-sub{
+  font-family:var(--fd);font-style:italic;font-weight:300;
+  font-size:1.25rem;line-height:1.4;color:var(--ochre-soft);
+  letter-spacing:.005em;
+  max-width:640px;margin-bottom:1.4rem;
+  opacity:0;animation:fadeUp .9s .9s forwards;
+  text-shadow:0 1px 8px rgba(28,28,26,0.3);
+}
+
+.hero-actions{
+  display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:center;align-items:center;
+  margin-bottom:1.5rem;
+  opacity:0;animation:fadeUp .9s 1.05s forwards;
+}
+
+/* Bouton primaire ocre, lisible sur l'image */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--fb);font-weight:500;font-size:.72rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink);background:var(--ochre);
+  padding:1.05rem 2rem;
+  border:1px solid var(--ochre);
+  transition:background .35s ease, gap .35s, border-color .35s, color .35s;
+}
+.btn-primary svg{transition:transform .35s;}
+.btn-primary:hover{background:var(--lime);border-color:var(--lime);color:var(--ink);gap:14px;}
+.btn-primary:hover svg{transform:translateX(4px);}
+
+.btn-ghost-light{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--fb);font-weight:500;font-size:.72rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--lime);
+  padding:1.05rem 2rem;
+  border:1px solid var(--lime);
+  transition:background .3s, color .3s, border-color .3s, gap .35s;
+}
+.btn-ghost-light:hover{background:var(--lime);color:var(--ink);gap:14px;}
+
+/* Trio meta sous le hero — sur l'image */
+.hero-meta-row{
+  display:flex;gap:3rem;justify-content:center;align-items:center;flex-wrap:wrap;
+  padding-top:.75rem;
+  border-top:1px solid rgba(244,240,232,0.2);
+  width:100%;max-width:780px;
+  opacity:0;animation:fadeUp .9s 1.2s forwards;
+}
+.hero-meta-item{text-align:center;}
+.hero-meta-num{
+  font-family:var(--fd);font-weight:300;font-size:1.6rem;
+  color:var(--ochre-soft);line-height:1;letter-spacing:-.02em;
+  margin-bottom:.4rem;
+}
+.hero-meta-label{
+  font-family:var(--fb);font-weight:500;font-size:.6rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--lime);
+  opacity:.8;line-height:1.4;
+}
+
+/* Badge top-right sur l'image */
+.hero-badge{
+  position:absolute;top:120px;right:var(--pad-x);z-index:3;
+  display:flex;align-items:center;gap:10px;
+  background:rgba(244,240,232,0.95);
+  padding:.85rem 1.2rem;
+  font-family:var(--fb);font-weight:500;font-size:.62rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink);
+  border-left:2px solid var(--ochre);
+  opacity:0;animation:fadeIn 1.2s 1.5s forwards;
+}
+.hero-badge::before{display:none;}
+.hero-badge-dot{display:inline-block;width:6px;height:6px;background:var(--ochre);border-radius:50%;animation:pulse 2s ease-in-out infinite;}
+
+/* Scroll indicator bottom-center */
+.hero-scroll-bottom{
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-family:var(--fb);font-weight:500;font-size:.6rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--lime);
+  opacity:0;animation:fadeIn 1.2s 1.7s forwards;
+}
+.hero-scroll-line-v{
+  width:1px;height:48px;background:rgba(244,240,232,0.4);position:relative;overflow:hidden;
+}
+.hero-scroll-line-v::after{
+  content:'';position:absolute;left:0;top:-100%;width:100%;height:100%;
+  background:var(--ochre);
+  animation:slideDown 2.4s ease-in-out infinite;
+}
+
+/* ═══════════════ MARQUEE ═══════════════ */
+.marquee-wrap{
+  background:var(--lime-deep);color:var(--ink);
+  padding:.55rem 0;overflow:hidden;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.hero .marquee-wrap{
+  position:relative;z-index:3;flex-shrink:0;
+  background:var(--lime-deep);
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:14px 0;
+}
+.hero .marquee-item{color:var(--ink);}
+.hero .marquee-sep{color:var(--ochre);}
+.marquee{
+  display:flex;gap:3rem;
+  animation:marquee 140s linear infinite;
+  white-space:nowrap;width:max-content;
+}
+.marquee-item{
+  font-family:var(--fd);font-style:italic;font-weight:300;
+  font-size:.85rem;color:var(--ink);flex-shrink:0;
+}
+.marquee-sep{color:var(--ochre);font-family:var(--fd);font-size:1rem;flex-shrink:0;}
+
+/* ═══════════════ SECTIONS ═══════════════ */
+.section{padding:7rem var(--pad-x);position:relative;content-visibility:auto;contain-intrinsic-size:1px 1200px;}
+.section-wide{max-width:var(--max-width);margin:0 auto;}
+.section-narrow{max-width:var(--max-narrow);margin:0 auto;}
+.section-header{margin-bottom:4rem;text-align:center;}
+.section-header .eyebrow{margin-bottom:1.5rem;}
+.section-header .h-section{margin-bottom:1.5rem;}
+.section-header p{
+  font-size:.95rem;line-height:1.85;color:var(--ink);
+  max-width:580px;margin:0 auto;
+}
+
+/* ═══════════════ CATALOGUE (en premier maintenant) ═══════════════ */
+.catalog{background:var(--lime);position:relative;}
+
+/* CAROUSEL HORIZONTAL */
+.cat-carousel-wrap{
+  position:relative;margin-top:4rem;
+}
+.cat-carousel{
+  display:flex;
+  gap:1.5rem;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+  padding:1rem 0 2rem;
+  cursor:grab;
+  -webkit-overflow-scrolling:touch;
+}
+.cat-carousel::-webkit-scrollbar{display:none;}
+.cat-carousel.dragging{cursor:grabbing;scroll-behavior:auto;}
+.cat-carousel.dragging *{pointer-events:none;user-select:none;}
+
+/* Padding sur les côtés pour effet "edge-to-edge" stylé */
+.cat-carousel::before,
+.cat-carousel::after{
+  content:'';flex-shrink:0;width:max(1.5rem, calc((100vw - 1280px) / 2));
+}
+
+/* Cartes : largeur fixe pour effet carrousel */
+.cat-grid{
+  display:contents; /* Le contenu reste mais la grille est désactivée */
+}
+.cat-card{
+  flex:0 0 360px;
+  scroll-snap-align:start;
+  will-change:transform;
+  transform-style:preserve-3d;
+  background:var(--lime-deep);
+  position:relative;overflow:hidden;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s, background .5s;
+  display:flex;flex-direction:column;
+}
+
+/* Boutons de navigation */
+.cat-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  z-index:10;
+  display:flex;align-items:center;justify-content:center;
+  width:56px;height:56px;
+  background:var(--lime);
+  border:1px solid var(--ochre);
+  border-radius:50%;
+  color:var(--ink);cursor:pointer;
+  transition:background .3s, color .3s, transform .3s, opacity .3s;
+  box-shadow:0 8px 24px -8px rgba(28,28,26,0.15);
+  font-family:var(--fb);font-size:1.4rem;font-weight:300;
+}
+.cat-nav:hover{background:var(--ochre);color:var(--ink);transform:translateY(-50%) scale(1.08);}
+.cat-nav:disabled{opacity:.3;cursor:not-allowed;}
+.cat-nav.prev{left:1rem;}
+.cat-nav.next{right:1rem;}
+
+/* Indicateur de progression */
+.cat-progress{
+  display:flex;justify-content:center;align-items:center;gap:1.5rem;
+  margin-top:1.5rem;
+}
+.cat-progress-bar{
+  flex:1;max-width:300px;height:1px;
+  background:var(--line);position:relative;overflow:hidden;
+}
+.cat-progress-fill{
+  position:absolute;top:0;left:0;height:100%;
+  background:var(--ochre);
+  width:25%;
+  transition:width .35s ease, transform .35s ease;
+}
+.cat-progress-count{
+  font-family:var(--fb);font-weight:500;font-size:.7rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--stone);
+}
+.cat-progress-count strong{color:var(--ochre);font-weight:500;}
+.cat-card:hover{
+  transform:translateY(-8px) perspective(1200px) rotateX(2deg) rotateY(-2deg);
+  box-shadow:0 30px 60px -24px rgba(28,28,26,0.25);
+  background:var(--lime);
+}
+.cat-img-wrap{
+  position:relative;width:100%;aspect-ratio:3/4;
+  overflow:hidden;background:var(--sand);
+}
+.cat-img-wrap.img-fallback::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23C9A96E' stroke-width='0.6' opacity='0.5' transform='translate(40 40) rotate(45) translate(-20 -20)'><rect x='0' y='0' width='20' height='20'/><rect x='20' y='0' width='20' height='20'/><rect x='0' y='20' width='20' height='20'/><rect x='20' y='20' width='20' height='20'/></g></svg>");
+  background-size:80px 80px;
+}
+.cat-img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 1s cubic-bezier(.2,.8,.2,1), filter .5s;
+  filter:saturate(.92) contrast(.98);
+}
+.cat-card:hover .cat-img{transform:scale(1.06);filter:saturate(1) contrast(1);}
+.cat-num{
+  position:absolute;top:1rem;left:1rem;
+  background:var(--lime);color:var(--ochre);
+  padding:.5rem .8rem;
+  font-family:var(--fb);font-weight:500;font-size:.62rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  border-left:2px solid var(--ochre);
+  z-index:2;
+}
+.cat-content{padding:1.75rem 1.5rem 2rem;flex:1;display:flex;flex-direction:column;}
+.cat-title{
+  font-family:var(--fd);font-weight:400;font-size:1.2rem;
+  line-height:1.3;color:var(--ink);margin-bottom:.6rem;
+  transition:color .3s;
+}
+.cat-card:hover .cat-title{color:var(--ochre);}
+.cat-desc{font-size:.85rem;line-height:1.7;color:var(--ink);font-weight:400;margin-bottom:1rem;flex:1;}
+.cat-rule{width:32px;height:1px;background:var(--ochre);margin-top:auto;transition:width .4s ease;}
+.cat-card:hover .cat-rule{width:80px;}
+.cat-arrow{
+  position:absolute;bottom:1.5rem;right:1.5rem;
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  background:transparent;color:var(--ink);
+  border:1px solid var(--line);
+  border-radius:50%;
+  opacity:0;transform:translateX(-8px);
+  transition:opacity .35s, transform .35s, background .3s, color .3s, border-color .3s;
+  font-size:.95rem;
+}
+.cat-card:hover .cat-arrow{
+  opacity:1;transform:translateX(0);
+  background:var(--ochre);color:var(--ink);border-color:var(--ochre);
+}
+
+/* ═══════════════ MANIFESTE ═══════════════ */
+.manifesto{background:var(--lime-deep);position:relative;overflow:hidden;}
+.manifesto-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;
+  max-width:var(--max-narrow);margin:0 auto;align-items:center;
+  position:relative;z-index:1;
+}
+.manifesto-text .eyebrow{margin-bottom:1.5rem;}
+.manifesto-text .h-section{margin-bottom:2rem;}
+.manifesto-text p{font-size:1rem;line-height:1.9;color:var(--ink);margin-bottom:1.25rem;}
+.manifesto-quote{
+  margin:2.5rem 0;padding:1.25rem 0 1.25rem 2rem;
+  border-left:2px solid var(--ochre);
+  font-family:var(--fd);font-style:italic;font-weight:300;
+  font-size:1.4rem;line-height:1.4;color:var(--ink);letter-spacing:-.01em;
+}
+.manifesto-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;
+  margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--line);
+}
+.stat-num{
+  font-family:var(--fd);font-weight:300;font-size:2.6rem;
+  color:var(--ochre);line-height:1;letter-spacing:-.02em;
+}
+.stat-label{
+  font-family:var(--fb);font-weight:500;font-size:.62rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--stone);
+  margin-top:.5rem;line-height:1.4;
+}
+.manifesto-images{position:relative;height:600px;}
+.manifesto-img-main{
+  position:absolute;top:0;right:0;width:80%;height:88%;overflow:hidden;
+}
+.manifesto-img-main img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1);}
+.manifesto-img-main:hover img{transform:scale(1.05);}
+.manifesto-img-sub{
+  position:absolute;bottom:0;left:0;width:55%;height:50%;overflow:hidden;
+  border:6px solid var(--lime-deep);z-index:1;
+}
+.manifesto-img-sub img{width:100%;height:100%;object-fit:cover;}
+.manifesto-tag{
+  position:absolute;top:1.5rem;left:1.5rem;
+  background:var(--ochre);color:var(--ink);
+  padding:.7rem 1rem;
+  font-family:var(--fb);font-weight:500;font-size:.62rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  z-index:2;
+}
+
+/* ═══════════════ TECH ═══════════════ */
+.tech{background:var(--lime);}
+.tech-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);
+  margin-top:4rem;border:1px solid var(--line);
+}
+.tech-card{
+  background:var(--lime);padding:2.5rem 2rem;
+  position:relative;overflow:hidden;
+  transition:background .4s ease;
+  min-height:280px;display:flex;flex-direction:column;
+}
+.tech-card:hover{background:var(--lime-deep);}
+.tech-num{
+  font-family:var(--fb);font-weight:500;font-size:.65rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ochre);
+  margin-bottom:1.25rem;
+}
+.tech-icon{width:32px;height:32px;margin-bottom:1.5rem;color:var(--ink);stroke:currentColor;}
+.tech-title{
+  font-family:var(--fd);font-weight:400;font-size:1.25rem;
+  line-height:1.3;color:var(--ink);margin-bottom:.75rem;
+}
+.tech-desc{font-size:.88rem;line-height:1.8;color:var(--ink);}
+.tech-certs{
+  margin-top:3rem;padding:1.75rem 2rem;
+  background:var(--lime-deep);
+  border:1px solid var(--ochre);
+  display:flex;align-items:center;justify-content:center;
+  flex-wrap:wrap;gap:1.5rem 2rem;
+  font-family:var(--fb);font-weight:500;font-size:.7rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink);
+}
+.tech-certs strong{color:var(--ochre);font-weight:500;}
+.tech-certs .dot{color:var(--ochre);font-weight:400;}
+
+/* ═══════════════ PROCESSUS ═══════════════ */
+.process{background:var(--lime-deep);}
+.process-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  margin-top:4rem;border:1px solid var(--line);
+  background:var(--lime);
+}
+.step{
+  padding:3rem 2rem;
+  border-right:1px solid var(--line);
+  position:relative;
+  transition:background .35s ease;
+  min-height:280px;display:flex;flex-direction:column;
+}
+.step:last-child{border-right:none;}
+.step:hover{background:var(--lime-deep);}
+.step-number{
+  font-family:var(--fd);font-weight:300;font-size:3.4rem;
+  color:var(--ochre);line-height:1;letter-spacing:-.03em;
+  margin-bottom:1.5rem;
+}
+.step-rule{width:24px;height:1px;background:var(--ink);margin-bottom:1.25rem;}
+.step-title{
+  font-family:var(--fd);font-weight:400;font-size:1.2rem;
+  color:var(--ink);margin-bottom:.75rem;
+}
+.step-desc{font-size:.88rem;line-height:1.8;color:var(--ink);font-weight:400;}
+
+/* ═══════════════ GALERIE ═══════════════ */
+.gallery{background:var(--lime);}
+.gal-grid{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  gap:1.25rem;margin-top:4rem;
+}
+.gal-item{position:relative;overflow:hidden;background:var(--sand);
+  opacity:0;transform:translateY(38px) scale(.97);
+  clip-path:inset(0 0 100% 0);
+  transition:opacity .9s cubic-bezier(.2,.8,.2,1), transform 1.1s cubic-bezier(.2,.8,.2,1), clip-path 1.1s cubic-bezier(.2,.8,.2,1), box-shadow .5s ease;
+}
+/* Entrée échelonnée quand la galerie devient visible */
+.gal-grid.in .gal-item{opacity:1;transform:translateY(0) scale(1);clip-path:inset(0 0 0 0);}
+.gal-grid.in .gal-item:nth-child(1){transition-delay:.05s;}
+.gal-grid.in .gal-item:nth-child(2){transition-delay:.16s;}
+.gal-grid.in .gal-item:nth-child(3){transition-delay:.27s;}
+.gal-grid.in .gal-item:nth-child(4){transition-delay:.38s;}
+.gal-item:hover{box-shadow:0 32px 64px -28px rgba(28,28,26,.4);z-index:2;}
+.gal-item:nth-child(1){grid-column:1/7;height:440px;}
+.gal-item:nth-child(2){grid-column:7/13;height:440px;}
+.gal-item:nth-child(3){grid-column:1/7;height:440px;}
+.gal-item:nth-child(4){grid-column:7/13;height:440px;}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1);}
+.gal-item:hover img{transform:scale(1.08);}
+.gal-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(28,28,26,.85) 0%, rgba(28,28,26,.15) 55%, transparent 100%);
+  opacity:0;transition:opacity .5s ease;
+  display:flex;align-items:flex-end;padding:2rem;
+}
+.gal-item:hover .gal-overlay{opacity:1;}
+/* Le contenu de la légende glisse vers le haut à l'apparition */
+.gal-overlay > div{
+  transform:translateY(16px);opacity:0;
+  transition:transform .55s cubic-bezier(.2,.8,.2,1) .08s, opacity .55s ease .08s;
+}
+.gal-item:hover .gal-overlay > div{transform:translateY(0);opacity:1;}
+@media(prefers-reduced-motion:reduce){
+  .gal-item{opacity:1;transform:none;clip-path:none;transition:none;}
+  .gal-overlay > div{transform:none;}
+}
+.gal-cat{
+  font-family:var(--fb);font-weight:500;font-size:.62rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ochre);
+  margin-bottom:8px;
+}
+.gal-name{font-family:var(--fd);font-weight:400;font-size:1.5rem;color:var(--lime);line-height:1.2;}
+.gal-rule-overlay{width:30px;height:1px;background:var(--ochre);margin-top:14px;}
+
+/* ═══════════════ LIGHTBOX ═══════════════ */
+.lightbox{
+  position:fixed;inset:0;z-index:500;
+  display:flex;align-items:center;justify-content:center;
+  padding:clamp(1.5rem,5vw,4rem);
+  background:rgba(20,20,18,0.92);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .35s ease, visibility .35s ease;
+}
+.lightbox.open{opacity:1;visibility:visible;pointer-events:auto;}
+.lightbox-figure{
+  margin:0;display:flex;flex-direction:column;align-items:center;gap:1rem;
+  max-width:min(1100px,92vw);max-height:88vh;
+  transform:scale(.94);transition:transform .4s cubic-bezier(.2,.8,.2,1);
+}
+.lightbox.open .lightbox-figure{transform:scale(1);}
+.lightbox-img{
+  max-width:100%;max-height:78vh;width:auto;height:auto;object-fit:contain;
+  box-shadow:0 40px 100px -30px rgba(0,0,0,.7);
+  background:var(--lime-deep);
+}
+.lightbox-caption{
+  font-family:var(--fb);font-weight:500;font-size:.7rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ochre-soft);
+  text-align:center;
+}
+.lightbox-close{
+  position:absolute;top:clamp(1rem,3vw,2rem);right:clamp(1rem,3vw,2rem);
+  width:48px;height:48px;display:flex;align-items:center;justify-content:center;
+  font-size:2rem;line-height:1;color:var(--lime);
+  background:rgba(244,240,232,0.08);border:1px solid rgba(244,240,232,0.25);
+  border-radius:50%;cursor:pointer;
+  transition:background .3s, border-color .3s, transform .3s;
+}
+.lightbox-close:hover{background:var(--ochre);color:var(--ink);border-color:var(--ochre);transform:rotate(90deg);}
+
+/* ═══════════════ BOUTON WHATSAPP FLOTTANT ═══════════════ */
+.wa-float{
+  position:fixed;bottom:2rem;right:2rem;z-index:300;
+  width:60px;height:60px;border-radius:50%;
+  background:#25D366;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 30px -8px rgba(37,211,102,0.6), 0 4px 12px rgba(0,0,0,0.18);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+}
+.wa-float svg{width:32px;height:32px;display:block;}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 16px 40px -10px rgba(37,211,102,0.7), 0 6px 16px rgba(0,0,0,0.22);}
+@media(max-width:600px){
+  .wa-float{bottom:1.25rem;right:1.25rem;width:54px;height:54px;}
+  .wa-float svg{width:29px;height:29px;}
+}
+
+/* ═══════════════ CTA BAND ═══════════════ */
+.cta-band{
+  background:var(--sand);
+  padding:7rem var(--pad-x);
+  position:relative;overflow:hidden;text-align:center;
+}
+.cta-band::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='%231C1C1A' stroke-width='0.5' opacity='0.06' transform='translate(60 60) rotate(45) translate(-30 -30)'><rect x='0' y='0' width='30' height='30'/><rect x='30' y='0' width='30' height='30'/><rect x='0' y='30' width='30' height='30'/><rect x='30' y='30' width='30' height='30'/></g></svg>");
+  background-size:120px 120px;pointer-events:none;
+}
+.cta-band-content{position:relative;z-index:1;max-width:780px;margin:0 auto;}
+.cta-band-title{
+  font-family:var(--fd);font-weight:300;font-size:clamp(2.2rem,5vw,4.2rem);
+  line-height:1.05;letter-spacing:-.02em;color:var(--ink);
+  margin:1.5rem 0 2.5rem;
+}
+.cta-band-title em{font-style:italic;display:block;color:var(--ochre);}
+
+/* ═══════════════ CONTACT ═══════════════ */
+.contact{background:var(--lime-deep);}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;
+  max-width:var(--max-narrow);margin:4rem auto 0;align-items:start;
+}
+.contact-info{position:sticky;top:120px;}
+.contact-detail{padding:1.5rem 0;border-bottom:1px solid var(--line);}
+.contact-detail:last-child{border:none;}
+.contact-label{
+  font-family:var(--fb);font-weight:500;font-size:.62rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--stone);
+  margin-bottom:.5rem;
+}
+.contact-value{
+  font-family:var(--fd);font-weight:400;font-size:1.05rem;
+  color:var(--ink);line-height:1.5;
+}
+.contact-value a{color:var(--ink);transition:color .3s;}
+.contact-value a:hover{color:var(--ochre);}
+.form{display:flex;flex-direction:column;gap:1rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form input, .form select, .form textarea{
+  background:var(--lime);border:1px solid transparent;color:var(--ink);
+  padding:1rem 1.25rem;
+  font-family:var(--fb);font-weight:400;font-size:.92rem;
+  outline:none;width:100%;
+  transition:border-color .3s, background .3s;
+  appearance:none;border-radius:0;
+}
+.form input::placeholder, .form textarea::placeholder{color:var(--stone);}
+.form input:focus, .form select:focus, .form textarea:focus{
+  border-color:var(--ochre);background:var(--lime);
+}
+.form textarea{resize:vertical;min-height:140px;font-family:var(--fb);}
+.form-submit{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--fb);font-weight:500;font-size:.72rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink);background:var(--ochre);
+  padding:1.1rem 2rem;
+  transition:background .3s, gap .35s, color .3s;
+  margin-top:.5rem;align-self:flex-start;border:none;
+}
+.form-submit:hover{background:var(--ink);color:var(--lime);gap:14px;}
+
+/* Success state */
+.form-success{
+  display:none;
+  flex-direction:column;align-items:flex-start;gap:1rem;
+  padding:2rem;background:var(--lime);border:1px solid var(--ochre);
+  margin-top:1rem;
+}
+.form-success.show{display:flex;animation:fadeUp .6s ease;}
+.form-success-icon{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--ochre);color:var(--lime);
+  display:flex;align-items:center;justify-content:center;
+  animation:pop .5s cubic-bezier(.2,.8,.2,1) .15s both;
+}
+@keyframes pop{from{transform:scale(0);}to{transform:scale(1);}}
+.form-success h4{
+  font-family:var(--fd);font-weight:300;font-size:1.5rem;
+  color:var(--ink);letter-spacing:-.01em;
+}
+.form-success p{
+  font-size:.9rem;line-height:1.6;color:var(--ink-soft);
+}
+.form.hide{display:none;}
+
+/* ═══════════════ FOOTER ═══════════════ */
+footer{background:var(--ink-soft);color:var(--lime);padding:1.75rem var(--pad-x) .85rem;}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:1.5rem;
+  max-width:var(--max-width);margin:0 auto 1rem;
+}
+.footer-brand .nav-logo{color:var(--lime);}
+.footer-brand .nav-logo-text{color:var(--lime);}
+.footer-brand p{
+  font-size:.78rem;line-height:1.55;color:var(--lime);opacity:.65;
+  margin-top:.6rem;max-width:340px;
+}
+.footer-col-title{
+  font-family:var(--fb);font-weight:500;font-size:.6rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ochre);margin-bottom:.6rem;
+}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:.3rem;}
+.footer-col a{
+  font-family:var(--fb);font-weight:400;font-size:.78rem;
+  color:var(--lime);opacity:.65;
+  transition:opacity .3s, color .3s;
+}
+.footer-col a:hover{opacity:1;color:var(--ochre);}
+.footer-bottom{
+  border-top:1px solid rgba(244,240,232,0.08);
+  padding-top:.85rem;max-width:var(--max-width);margin:0 auto;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  font-family:var(--fb);font-weight:400;font-size:.7rem;
+  color:var(--lime);opacity:.45;
+}
+
+/* ═══════════════ ANIMATIONS ═══════════════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes pulse{0%,100%{opacity:.4;transform:scale(1);}50%{opacity:1;transform:scale(1.4);}}
+@keyframes slideDown{from{top:-100%;}to{top:100%;}}
+@keyframes slowZoom{from{transform:scale(1);}to{transform:scale(1.08);}}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-d2{transition-delay:.15s;}
+.reveal-d3{transition-delay:.3s;}
+.reveal-d4{transition-delay:.45s;}
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+
+/* GRANDS ÉCRANS — Ultra wide 1920px+ */
+@media(min-width:1920px){
+  :root{
+    --max-width: 1720px;
+    --max-narrow: 1380px;
+  }
+  .hero-content{max-width:1180px;}
+  .hero-title{font-size:7.2rem;}
+  .hero-sub{font-size:1.5rem;max-width:740px;}
+  .h-section{font-size:4rem;}
+  .cat-card{flex:0 0 420px;}
+  .cat-nav{width:64px;height:64px;font-size:1.6rem;}
+  .gal-item:nth-child(1),.gal-item:nth-child(2),.gal-item:nth-child(3),.gal-item:nth-child(4){height:520px;}
+  .manifesto-images{height:720px;}
+  .marquee-item{font-size:.95rem;}
+  .body-lg, .manifesto-text p, .section-header p{font-size:1.05rem;}
+}
+
+/* TRÈS GRAND ÉCRAN — 1440px+ */
+@media(min-width:1440px) and (max-width:1919px){
+  :root{
+    --max-width: 1480px;
+    --max-narrow: 1180px;
+  }
+  .hero-title{font-size:6.4rem;}
+  .cat-card{flex:0 0 380px;}
+  .gal-item:nth-child(1),.gal-item:nth-child(2),.gal-item:nth-child(3),.gal-item:nth-child(4){height:480px;}
+  .manifesto-images{height:640px;}
+}
+
+/* GRANDS ÉCRANS — le hero grandit pour ne jamais rogner son contenu */
+@media(min-width:1440px){
+  .hero-inner{padding-top:clamp(120px,11vh,150px);}
+}
+
+/* DESKTOP STANDARD — 1100px à 1440px */
+@media(max-width:1440px) and (min-width:1101px){
+  :root{
+    --max-width: 1280px;
+  }
+}
+
+/* TABLETTE PAYSAGE — 901 à 1100px */
+@media(max-width:1100px){
+  .nav-links{gap:1.5rem;}
+  .nav-links a{font-size:.68rem;}
+  .manifesto-grid{gap:3rem;}
+  .gal-item:nth-child(n){grid-column:span 6;height:340px;}
+  .footer-grid{grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;}
+  .hero-title{font-size:clamp(2.4rem, 5.6vw, 4.2rem);}
+  .hero-sub{font-size:1.15rem;max-width:600px;}
+  .hero-logo-big{width:84px;height:84px;}
+  .hero-meta-row{gap:2.2rem;}
+  .hero-badge{top:100px;font-size:.58rem;padding:.7rem 1.1rem;}
+  .section{padding:6rem var(--pad-x);}
+  .tech-grid{gap:1.5rem;}
+  .process-grid{grid-template-columns:repeat(4,1fr);}
+}
+/* TABLETTE PORTRAIT — 601 à 900px */
+@media(max-width:900px){
+  .nav-links, .nav-cta{display:none;}
+  .burger{display:flex;}
+  nav{padding:.75rem 1.5rem;}
+  nav.scrolled{padding:.85rem 1.5rem;}
+  .hero{padding:0;min-height:100svh;}
+  .hero-inner{padding:100px 1.5rem 32px;}
+  .hero-logo-big{width:72px;height:72px;margin-bottom:1rem;}
+  .hero-title{font-size:clamp(2rem, 6.5vw, 3.4rem);margin-bottom:1rem;}
+  .hero-sub{font-size:1.05rem;max-width:520px;margin-bottom:1.2rem;}
+  .hero-meta-row{gap:1.75rem;flex-direction:row;padding-top:.75rem;}
+  .hero-meta-num{font-size:1.35rem;}
+  .hero-meta-label{font-size:.56rem;}
+  .hero-scroll-bottom{display:none;}
+  .hero-badge{top:88px;right:1.5rem;font-size:.55rem;padding:.6rem .95rem;}
+  .marquee-item{font-size:.78rem;}
+  .section{padding:4.5rem 1.5rem;}
+  .section-header{margin-bottom:3rem;}
+  .manifesto-grid{grid-template-columns:1fr;gap:3rem;}
+  .manifesto-images{height:480px;order:-1;}
+  .tech-grid{grid-template-columns:1fr;gap:1rem;}
+  .cat-card{flex:0 0 280px;}
+  .cat-nav{width:46px;height:46px;font-size:1.2rem;}
+  .cat-nav.prev{left:.5rem;}
+  .cat-nav.next{right:.5rem;}
+  .process-grid{grid-template-columns:1fr 1fr;}
+  .step{border-right:none;border-bottom:1px solid var(--line);}
+  .step:nth-child(odd){border-right:1px solid var(--line);}
+  .step:nth-child(2n){border-right:none;}
+  .step:nth-child(3),.step:nth-child(4){border-bottom:none;}
+  .gal-item:nth-child(n){grid-column:1/13;height:320px;}
+  .contact-grid{grid-template-columns:1fr;gap:3rem;}
+  .contact-info{position:static;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2.5rem;}
+  .footer-brand{grid-column:1/3;}
+}
+/* TÉLÉPHONE — max 600px */
+@media(max-width:600px){
+  :root{--pad-x:1.25rem;}
+  nav{padding:.6rem 1.25rem;}
+  nav.scrolled{padding:.75rem 1.25rem;}
+  .nav-logo svg{width:28px;height:28px;}
+  .nav-logo-text{font-size:1rem;}
+  .hero{min-height:100svh;}
+  .hero-inner{padding:88px 1.25rem 24px;}
+  .hero-logo-big{width:64px;height:64px;margin-bottom:.85rem;}
+  .hero-eyebrow{font-size:.6rem;margin-bottom:.85rem;}
+  .hero-title{font-size:clamp(1.85rem, 8.5vw, 2.6rem);line-height:1.05;margin-bottom:.9rem;}
+  .hero-divider{margin-bottom:.85rem;}
+  .hero-divider .line{width:32px;}
+  .hero-sub{font-size:1rem;line-height:1.4;margin-bottom:1.1rem;}
+  .hero-actions{flex-direction:column;align-items:stretch;width:100%;gap:.85rem;margin-bottom:1.25rem;}
+  .btn-primary, .btn-ghost-light{justify-content:center;padding:.95rem 1.5rem;font-size:.68rem;}
+  .hero-meta-row{gap:1rem;padding-top:.5rem;}
+  .hero-meta-num{font-size:1.15rem;}
+  .hero-meta-label{font-size:.5rem;letter-spacing:.18em;}
+  .hero-meta-item:nth-child(3){display:none;}
+  .hero-badge{display:none;}
+  .marquee-item{font-size:.7rem;}
+  .section{padding:4rem 1.25rem;}
+  .section-header{margin-bottom:2.5rem;}
+  .cat-card{flex:0 0 240px;}
+  .cat-nav{display:none;}
+  .process-grid{grid-template-columns:1fr;}
+  .step{border-right:none !important;border-bottom:1px solid var(--line);padding:2rem 1.5rem;}
+  .step:last-child{border-bottom:none;}
+  .manifesto-stats{grid-template-columns:1fr;gap:1.5rem;}
+  .manifesto-images{height:360px;}
+  .tech-card{padding:2rem 1.5rem;min-height:auto;}
+  .tech-certs{font-size:.6rem;gap:.85rem 1.25rem;padding:1.25rem 1.25rem;flex-wrap:wrap;}
+  .footer-grid{grid-template-columns:1fr;gap:2rem;}
+  .footer-brand{grid-column:1;}
+  .footer-bottom{justify-content:flex-start;flex-direction:column;gap:.5rem;}
+}
+
+/* PETIT TÉLÉPHONE — max 380px */
+@media(max-width:380px){
+  .hero-inner{padding:78px 1rem 20px;}
+  .hero-logo-big{width:56px;height:56px;}
+  .hero-title{font-size:1.7rem;}
+  .hero-sub{font-size:.95rem;}
+  .hero-meta-row{gap:.75rem;}
+  .hero-meta-num{font-size:1rem;}
+  .hero-meta-label{font-size:.46rem;}
+  .btn-primary, .btn-ghost-light{padding:.85rem 1.25rem;font-size:.65rem;}
+  .nav-logo-text{display:none;}
+  .section{padding:3.5rem 1rem;}
+}
+
+/* ÉCRANS COURTS / PAYSAGE — téléphone couché, petites fenêtres (hauteur réduite) */
+@media(max-height:640px) and (min-width:601px){
+  .hero{min-height:0;}
+  .hero-inner{padding:74px var(--pad-x) 22px;}
+  .hero-logo-big{width:54px;height:54px;margin-bottom:.6rem;}
+  .hero-eyebrow{margin-bottom:.55rem;}
+  .hero-title{font-size:clamp(1.7rem,4.4vw,2.6rem);margin-bottom:.6rem;}
+  .hero-divider{margin-bottom:.55rem;}
+  .hero-sub{font-size:1rem;margin-bottom:.8rem;}
+  .hero-actions{margin-bottom:.8rem;}
+  .btn-primary, .btn-ghost-light{padding:.8rem 1.5rem;}
+  .hero-meta-row{gap:1.75rem;padding-top:.55rem;}
+  .hero-meta-num{font-size:1.25rem;margin-bottom:.2rem;}
+}
+
+/* TRÈS COURT — hauteur extrême (≤ 460px) : on compacte au maximum */
+@media(max-height:460px){
+  .hero{min-height:0;}
+  .hero-inner{padding:64px var(--pad-x) 18px;}
+  .hero-logo-big{width:44px;height:44px;margin-bottom:.4rem;}
+  .hero-eyebrow{margin-bottom:.4rem;}
+  .hero-title{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.45rem;}
+  .hero-divider{margin-bottom:.4rem;}
+  .hero-sub{font-size:.92rem;margin-bottom:.6rem;}
+  .hero-actions{margin-bottom:.6rem;gap:.6rem;}
+  .hero-meta-row{gap:1.4rem;padding-top:.4rem;border-top-color:transparent;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav" class="over-hero">
+  <a href="#" class="nav-logo">
+    <svg width="34" height="34" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="currentColor" stroke-width="6" fill="none" stroke-linejoin="miter">
+        <g transform="translate(100 100) rotate(45)">
+          <rect x="-44" y="-44" width="44" height="44"/>
+          <rect x="0" y="-44" width="44" height="44"/>
+          <rect x="-44" y="0" width="44" height="44"/>
+          <rect x="0" y="0" width="44" height="44"/>
+        </g>
+      </g>
+    </svg>
+    <span class="nav-logo-text">Sur-Face <em>Studio</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#catalogue">Catalogue</a></li>
+    <li><a href="#manifeste">Manifeste</a></li>
+    <li><a href="#technologie">Technologie</a></li>
+    <li><a href="#realisations">Réalisations</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Démarrer un projet</a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href="#catalogue">Catalogue</a>
+  <a href="#manifeste">Manifeste</a>
+  <a href="#technologie">Technologie</a>
+  <a href="#realisations">Réalisations</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ═══════════════ HERO IMAGE PLEIN ÉCRAN ═══════════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="images/hero-bg.jpg" alt="Intérieur Surface Studio" onerror="this.parentNode.classList.add('img-fallback'); this.style.display='none';">
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-inner">
+  <div class="hero-content">
+    <svg class="hero-logo-big" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="currentColor" stroke-width="5" fill="none" stroke-linejoin="miter">
+        <g transform="translate(100 100) rotate(45)">
+          <rect x="-44" y="-44" width="44" height="44"/>
+          <rect x="0" y="-44" width="44" height="44"/>
+          <rect x="-44" y="0" width="44" height="44"/>
+          <rect x="0" y="0" width="44" height="44"/>
+        </g>
+      </g>
+    </svg>
+
+    <span class="eyebrow centered both hero-eyebrow">Manufacture contemporaine · Sidi Ghanem</span>
+
+    <h1 class="hero-title">
+      Chaque mur raconte <em>une histoire.</em><br>
+      <span class="gold">Nous l'imprimons.</span>
+    </h1>
+
+    <div class="hero-divider">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
+
+    <p class="hero-sub">
+      Une seule technologie, treize surfaces, mille intérieurs.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#catalogue" class="btn-primary">
+        Découvrir le catalogue
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn-ghost-light">Démarrer un projet</a>
+    </div>
+
+    <div class="hero-meta-row" style="padding: 12px 0px 2px">
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">13</div>
+        <div class="hero-meta-label">Surfaces<br>au catalogue</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">1 625<span style="font-size:.9rem;"> mm</span></div>
+        <div class="hero-meta-label">Largeur<br>maximale</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">100<span style="font-size:1.2rem;">%</span></div>
+        <div class="hero-meta-label">Encres<br>sans COV</div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- Marquee intégrée dans le hero -->
+  <div class="marquee-wrap" style="padding: 15.2px 0px 1.2px">
+  <div class="marquee">
+    <span class="marquee-item">Papier peint personnalisé</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Trompe-l'œil</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Stickers muraux</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Graphiques vinyle</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Décoration de vitrines</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Film dépoli</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Impression sur acrylique</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Tableaux canvas</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Impression sur tissu</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Décoration de meubles</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Panneaux décoratifs</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Foam Board</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Papier peint personnalisé</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Trompe-l'œil</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Stickers muraux</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Graphiques vinyle</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Décoration de vitrines</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Film dépoli</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Impression sur acrylique</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Tableaux canvas</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Impression sur tissu</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Décoration de meubles</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Panneaux décoratifs</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Foam Board</span><span class="marquee-sep">◆</span>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════ 1. CATALOGUE (D'ABORD) ═══════════════ -->
+<section class="section catalog" id="catalogue">
+  <div class="section-wide">
+    <div class="section-header reveal">
+      <span class="eyebrow centered">01 — Nos Produits</span>
+      <h2 class="h-section" style="margin-top:1rem;">Treize surfaces.<br><em>Mille intérieurs.</em></h2>
+      <p>De la fresque florale qui habille votre chambre aux films dépolis de votre salle de bain. Chaque produit est imprimé sur mesure, sur le support le plus adapté à son usage.</p>
+    </div>
+
+    <div class="cat-carousel-wrap">
+      <button class="cat-nav prev" id="catPrev" aria-label="Précédent">←</button>
+      <button class="cat-nav next" id="catNext" aria-label="Suivant">→</button>
+
+      <div class="cat-carousel" id="catCarousel">
+        <div class="cat-grid">
+      <div class="cat-card reveal">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/download (17)-76240c63.png" loading="lazy" alt="Papier peint personnalisé — motif géométrique rosaces en salon">
+          <div class="cat-num">01 / Papier peint</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Papier peint personnalisé</h3>
+          <p class="cat-desc">Du panoramique floral au design géométrique, chaque mur raconte votre histoire en haute définition.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal reveal-d2">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/download (7)-7ad89cfd.webp" loading="lazy" alt="Trompe-l'œil — fresque tropicale immersive avec oiseaux et feuillages">
+          <div class="cat-num">02 / Trompe-l'œil</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Papier peint trompe-l'œil</h3>
+          <p class="cat-desc">Fenêtres fictives, perspectives architecturales, paysages immersifs — l'illusion devient décor.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal reveal-d3">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/1bri5-Y068gmNu_qPdLGV.png" loading="lazy" alt="Surface Studio">
+          <div class="cat-num">03 / Stickers</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Stickers muraux décoratifs</h3>
+          <p class="cat-desc">Vinyles adhésifs repositionnables qui transforment instantanément vos murs sans engagement.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/oxu16llJryY5a48UGNvF2-c45f10c2.png" loading="lazy" alt="Graphiques en vinyle grand format — couloir forêt dorée en perspective">
+          <div class="cat-num">04 / Vinyle</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Graphiques en vinyle</h3>
+          <p class="cat-desc">Habillages durables et résistants pour signalétique intérieure et branding d'espaces de travail.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal reveal-d2">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/K6HbDta3J8idzcE1fLkWQ.png" loading="lazy" alt="Décoration de vitrine — devanture vitrée avec film décoratif doré dépoli">
+          <div class="cat-num">05 / Vitrines</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Décoration de vitrines</h3>
+          <p class="cat-desc">Films adhésifs translucides et opaques qui transforment vos devantures en supports de communication.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal reveal-d3">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/f3e6eWhmwK_eILFCvUK-_.png" loading="lazy" alt="Surface Studio">
+          <div class="cat-num">06 / Film dépoli</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Film dépoli décoratif</h3>
+          <p class="cat-desc">Intimité et esthétisme réunis. Sublime cloisons vitrées, fenêtres et parois de douche.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/download (12)-2bee0da7.png" loading="lazy" alt="Impression sur acrylique rétroéclairé — marbre blanc veines dorées">
+          <div class="cat-num">07 / Acrylique</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Impression sur acrylique</h3>
+          <p class="cat-desc">Profondeur et luminosité incomparables. Idéal pour œuvres contemporaines et halls d'hôtels.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal reveal-d2">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/ETRfyJCqB2u0XMfxvgDfl-70afe884.png" loading="lazy" alt="Triptyque canvas noir, blanc et or au-dessus d'une table à manger">
+          <div class="cat-num">08 / Canvas</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Tableaux canvas décoratifs</h3>
+          <p class="cat-desc">Impressions sur toile tendue au rendu artistique. Du panoramique au triptyque, le caractère.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal reveal-d3">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/download-e01707ff.jpg" loading="lazy" alt="Impression sur tissu — rideaux damassés dorés en salon classique">
+          <div class="cat-num">09 / Tissu</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Impression sur tissu</h3>
+          <p class="cat-desc">Textiles imprimés sur mesure pour rideaux, coussins, têtes de lit et panneaux muraux.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/download (20)-02b90eac.png" loading="lazy" alt="Décoration de meubles — échantillonnage de finitions adhésives">
+          <div class="cat-num">10 / Meubles</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Décoration de meubles</h3>
+          <p class="cat-desc">Films adhésifs effets bois, marbre, motifs exclusifs. Donnez une seconde vie à vos meubles.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal reveal-d2">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/download (10)-2619df96.png" loading="lazy" alt="Panneaux décoratifs en arches moucharabieh — ambiance orientale">
+          <div class="cat-num">11 / Panneaux</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Panneaux décoratifs intérieurs</h3>
+          <p class="cat-desc">Panneaux rigides imprimés pour habillages muraux, claustra et cloisons décoratives.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal reveal-d3">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/ftvA1EfG3iIOCvgV3bzsI (1).png" loading="lazy" alt="Panneaux en mousse imprimés — compositions abstraites or et ivoire en galerie">
+          <div class="cat-num">12 / Foam Board</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Panneaux en mousse</h3>
+          <p class="cat-desc">Légers, polyvalents et faciles à installer. Parfaits pour signalétique et événementiel.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+
+      <div class="cat-card reveal">
+        <div class="cat-img-wrap img-fallback">
+          <img class="cat-img" src="uploads/download (3)-181c7041.png" loading="lazy" alt="Canvas grand format à finition métallisée dorée dans un hall">
+          <div class="cat-num">13 / Canvas doré</div>
+        </div>
+        <div class="cat-content">
+          <h3 class="cat-title">Canvas grand format doré</h3>
+          <p class="cat-desc">Tirages métallisés à finitions or et cuivre — pour halls et suites haut de gamme.</p>
+          <div class="cat-rule"></div>
+        </div>
+        <div class="cat-arrow">→</div>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="cat-progress">
+      <span class="cat-progress-count"><strong id="catCurrent">01</strong> / 13</span>
+      <div class="cat-progress-bar"><div class="cat-progress-fill" id="catProgress"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 2. MANIFESTE ═══════════════ -->
+<section class="section manifesto" id="manifeste">
+  <div class="manifesto-grid">
+    <div class="manifesto-text reveal">
+      <span class="eyebrow">02 — Manifeste</span>
+      <h2 class="h-section">Quatre losanges.<br>Un module<br><em>de tissage.</em></h2>
+      <p>Surface Studio est née d'une conviction simple : la décoration imprimée mérite la même rigueur que l'architecture qu'elle habille. À Sidi Ghanem, nous fabriquons des surfaces sur mesure — du papier peint au film dépoli, du vinyle à l'acrylique — pour les architectes, les décorateurs, et les propriétaires de lieux d'exception.</p>
+      <p>Notre logo n'est pas un symbole. C'est un fragment de la matière qu'il représente : un module de trame, la chaîne rencontrant la trame, l'unité minimale du textile.</p>
+      <div class="manifesto-quote">« Nous ne décorons pas des murs.<br>Nous fabriquons les histoires<br>que vos espaces racontent. »</div>
+      <div class="manifesto-stats">
+        <div>
+          <div class="stat-num">13</div>
+          <div class="stat-label">Surfaces<br>au catalogue</div>
+        </div>
+        <div>
+          <div class="stat-num">1 625</div>
+          <div class="stat-label">Mm de largeur<br>maximale</div>
+        </div>
+        <div>
+          <div class="stat-num">100<span style="font-size:1.4rem;">%</span></div>
+          <div class="stat-label">Encres<br>sans COV</div>
+        </div>
+      </div>
+    </div>
+    <div class="manifesto-images reveal reveal-d2">
+      <div class="manifesto-tag">Atelier · 2026</div>
+      <div class="manifesto-img-main img-fallback">
+        <img src="uploads/download (1).png" loading="lazy" alt="Surface Studio">
+      </div>
+      <div class="manifesto-img-sub img-fallback">
+        <img src="uploads/download (2).png" loading="lazy" alt="Surface Studio">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 3. TECHNOLOGIE ═══════════════ -->
+<section class="section tech" id="technologie">
+  <div class="section-wide">
+    <div class="section-header reveal">
+      <span class="eyebrow centered">03 — Technologie</span>
+      <h2 class="h-section" style="margin-top:1rem;">Une seule technologie.<br><em>Toutes les surfaces.</em></h2>
+      <p>HP Latex 630 W — la machine que nous avons choisie pour ce qu'elle permet de ne pas faire : pas de solvants, pas d'odeur, pas de compromis. Une encre à l'eau qui imprime sur presque tout.</p>
+    </div>
+
+    <div class="tech-grid reveal reveal-d2">
+      <div class="tech-card">
+        <div class="tech-num">01</div>
+        <svg class="tech-icon" viewBox="0 0 32 32" fill="none"><path d="M16 3C16 3 7 12 7 19a9 9 0 0018 0c0-7-9-16-9-16z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <h3 class="tech-title">Encres aqueuses</h3>
+        <p class="tech-desc">Base eau, sans solvants. Imprime sur films fins, papiers, textiles et supports rigides — sans déformation ni jaunissement.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">02</div>
+        <svg class="tech-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="1.5"/><path d="M16 5v22M5 16h22" stroke="currentColor" stroke-width="1.5"/></svg>
+        <h3 class="tech-title">Sans COV</h3>
+        <p class="tech-desc">Aucun composé organique volatil. Certifié pour les espaces clos — chambres d'enfants, hôpitaux, restaurants, hôtels de prestige.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">03</div>
+        <svg class="tech-icon" viewBox="0 0 32 32" fill="none"><path d="M3 16h26M3 10h26M3 22h26" stroke="currentColor" stroke-width="1.5"/></svg>
+        <h3 class="tech-title">1 625 mm de largeur</h3>
+        <p class="tech-desc">Grande largeur d'impression pour panoramiques sans raccord visible. Du mur de salon entier à la fresque de couloir d'hôtel.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">04</div>
+        <svg class="tech-icon" viewBox="0 0 32 32" fill="none"><path d="M16 3l3.5 9h9l-7 5.5 2.5 9.5-8-5.5-8 5.5 2.5-9.5-7-5.5h9z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <h3 class="tech-title">Certifications</h3>
+        <p class="tech-desc">UL ECOLOGO®, EPEAT, UL GREENGUARD GOLD, ENERGY STAR®, AgBB. Les standards les plus exigeants en matière environnementale.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">05</div>
+        <svg class="tech-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="5" fill="currentColor"/></svg>
+        <h3 class="tech-title">Encre blanche</h3>
+        <p class="tech-desc">Sous-couche, sur-couche, ou intercalée. Impression sur supports sombres, transparents, ou colorés — couleurs vives partout.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">06</div>
+        <svg class="tech-icon" viewBox="0 0 32 32" fill="none"><rect x="5" y="5" width="22" height="22" stroke="currentColor" stroke-width="1.5"/><path d="M12 16l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 class="tech-title">Production locale</h3>
+        <p class="tech-desc">Atelier Sidi Ghanem, livraison Marrakech intra-muros en 24h. Délais courts, contrôle qualité direct, traçabilité totale.</p>
+      </div>
+    </div>
+
+    <div class="tech-certs reveal reveal-d3">
+      <strong>UL ECOLOGO®</strong>
+      <span class="dot">◆</span>
+      <strong>EPEAT</strong>
+      <span class="dot">◆</span>
+      <strong>GREENGUARD GOLD</strong>
+      <span class="dot">◆</span>
+      <strong>ENERGY STAR®</strong>
+      <span class="dot">◆</span>
+      <strong>AGBB</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 4. PROCESSUS ═══════════════ -->
+<section class="section process">
+  <div class="section-wide">
+    <div class="section-header reveal">
+      <span class="eyebrow centered">04 — Processus</span>
+      <h2 class="h-section" style="margin-top:1rem;">De la conception<br><em>à la pose.</em></h2>
+      <p>Quatre étapes, une exigence. Un seul interlocuteur du devis à l'installation finale.</p>
+    </div>
+
+    <div class="process-grid reveal reveal-d2">
+      <div class="step">
+        <div class="step-number">01</div>
+        <div class="step-rule"></div>
+        <h3 class="step-title">Consultation</h3>
+        <p class="step-desc">Visite des lieux, échange avec l'architecte ou le décorateur, analyse des contraintes techniques et esthétiques.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <div class="step-rule"></div>
+        <h3 class="step-title">Création</h3>
+        <p class="step-desc">Maquettes, BAT, recherche du visuel sur mesure ou adaptation de votre fichier source. Validation client.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <div class="step-rule"></div>
+        <h3 class="step-title">Impression</h3>
+        <p class="step-desc">Production en atelier sur HP Latex 630 W. Contrôle qualité avant emballage. Délais courts garantis.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">04</div>
+        <div class="step-rule"></div>
+        <h3 class="step-title">Installation</h3>
+        <p class="step-desc">Pose professionnelle par notre équipe. Marrakech intra-muros en standard, ailleurs sur devis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 5. GALERIE ═══════════════ -->
+<section class="section gallery" id="realisations">
+  <div class="section-wide">
+    <div class="section-header reveal">
+      <span class="eyebrow centered">05 — Réalisations</span>
+      <h2 class="h-section" style="margin-top:1rem;">Espaces<br><em>transformés.</em></h2>
+      <p>Quelques projets récents — riads, hôtels, boutiques, résidences privées. Chaque mur raconte une histoire que nous avons imprimée.</p>
+    </div>
+
+    <div class="gal-grid reveal reveal-d2">
+      <div class="gal-item img-fallback">
+        <img src="uploads/download (21).png" loading="lazy" alt="Salon avec fresque trompe-l'œil méditerranéenne — fenêtre fictive sur la mer">
+        <div class="gal-overlay"><div>
+          <p class="gal-cat">Trompe-l'œil immersif</p>
+          <p class="gal-name">Villa Palmeraie</p>
+          <div class="gal-rule-overlay"></div>
+        </div></div>
+      </div>
+      <div class="gal-item img-fallback">
+        <img src="uploads/mQJLF76NdFUrh5DJtIZJc-4a025e80.png" loading="lazy" alt="Salon avec mur de livres dorés imprimé en trompe-l'œil">
+        <div class="gal-overlay"><div>
+          <p class="gal-cat">Papier peint trompe-l'œil</p>
+          <p class="gal-name">Bibliothèque dorée</p>
+          <div class="gal-rule-overlay"></div>
+        </div></div>
+      </div>
+      <div class="gal-item img-fallback">
+        <img src="uploads/download (26).png" loading="lazy" alt="Salon habillé d'un papier peint panoramique géométrique immersif">
+        <div class="gal-overlay"><div>
+          <p class="gal-cat">Papier peint panoramique</p>
+          <p class="gal-name">Salon géométrique</p>
+          <div class="gal-rule-overlay"></div>
+        </div></div>
+      </div>
+      <div class="gal-item img-fallback">
+        <img src="uploads/wUSbxw2O0aIkWHLx31bOW-4a399cbc.png" loading="lazy" alt="Bureau avec papier peint floral et toiles décoratives">
+        <div class="gal-overlay"><div>
+          <p class="gal-cat">Papier peint & toiles</p>
+          <p class="gal-name">Bureau Gueliz</p>
+          <div class="gal-rule-overlay"></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA BAND ═══════════════ -->
+<section class="cta-band">
+  <div class="cta-band-content">
+    <span class="eyebrow centered both">Démarrez votre projet</span>
+    <h2 class="cta-band-title">Une surface en tête ?<em>Parlons-en.</em></h2>
+    <a href="#contact" class="btn-primary">
+      Demander un devis
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section class="section contact" id="contact">
+  <div class="section-wide">
+    <div class="section-header reveal">
+      <span class="eyebrow centered">06 — Contact</span>
+      <h2 class="h-section" style="margin-top:1rem;">Parlons de<br><em>votre projet.</em></h2>
+      <p>Un devis sous 48h. Un seul interlocuteur du brief à la pose. Visite d'atelier sur rendez-vous à Sidi Ghanem.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-detail">
+          <p class="contact-label">Atelier</p>
+          <p class="contact-value">Zone industrielle Sidi Ghanem<br>Marrakech, Maroc</p>
+        </div>
+        <div class="contact-detail">
+          <p class="contact-label">Téléphone</p>
+          <p class="contact-value"><a href="tel:+212600000000">+212 6 00 00 00 00</a></p>
+        </div>
+        <div class="contact-detail">
+          <p class="contact-label">Email</p>
+          <p class="contact-value"><a href="mailto:contact@surfacestudio.ma">contact@surfacestudio.ma</a></p>
+        </div>
+        <div class="contact-detail">
+          <p class="contact-label">Horaires</p>
+          <p class="contact-value">Lun–Ven · 09h–18h<br>Sam · 09h–13h sur rdv</p>
+        </div>
+      </div>
+
+      <form class="form reveal reveal-d2" id="contactForm" action="https://formspree.io/f/[MON_ID_FORMSPREE]" method="POST">
+        <div class="form-row">
+          <input type="text" name="nom" placeholder="Nom complet *" required>
+          <input type="email" name="email" placeholder="Email *" required>
+        </div>
+        <div class="form-row">
+          <input type="tel" name="telephone" placeholder="Téléphone">
+          <select name="type_projet" required>
+            <option value="">Type de projet *</option>
+            <option>Papier peint personnalisé</option>
+            <option>Trompe-l'œil</option>
+            <option>Stickers muraux</option>
+            <option>Vinyle</option>
+            <option>Décoration de vitrines</option>
+            <option>Film dépoli</option>
+            <option>Acrylique</option>
+            <option>Canvas</option>
+            <option>Tissu</option>
+            <option>Décoration de meubles</option>
+            <option>Panneaux décoratifs</option>
+            <option>Foam Board</option>
+            <option>Autre / multi-produits</option>
+          </select>
+        </div>
+        <input type="text" name="surface" placeholder="Surface estimée (m²) ou pièce">
+        <textarea name="message" placeholder="Décrivez votre projet — type de lieu, ambiance souhaitée, contraintes..." rows="5"></textarea>
+        <button type="submit" class="form-submit">
+          Envoyer le projet
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+
+      <div class="form-success reveal reveal-d2" id="formSuccess">
+        <div class="form-success-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h4>Demande bien reçue.</h4>
+        <p>Merci pour votre confiance — l'atelier vous répond sous 48h avec une étude personnalisée.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">
+        <svg width="32" height="32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="6" fill="none" stroke-linejoin="miter">
+            <g transform="translate(100 100) rotate(45)">
+              <rect x="-44" y="-44" width="44" height="44"/>
+              <rect x="0" y="-44" width="44" height="44"/>
+              <rect x="-44" y="0" width="44" height="44"/>
+              <rect x="0" y="0" width="44" height="44"/>
+            </g>
+          </g>
+        </svg>
+        <span class="nav-logo-text">Sur-Face <em>Studio</em></span>
+      </a>
+      <p>Manufacture contemporaine de décoration imprimée. Sidi Ghanem, Marrakech. Technologie HP Latex 630 W — encres aqueuses, sans COV, certifications environnementales.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Navigation</p>
+      <ul>
+        <li><a href="#catalogue">Catalogue</a></li>
+        <li><a href="#manifeste">Manifeste</a></li>
+        <li><a href="#technologie">Technologie</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Produits</p>
+      <ul>
+        <li><a href="#catalogue">Papier peint</a></li>
+        <li><a href="#catalogue">Vinyle & stickers</a></li>
+        <li><a href="#catalogue">Acrylique</a></li>
+        <li><a href="#catalogue">Tissu & canvas</a></li>
+        <li><a href="#catalogue">Panneaux</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Suivre</p>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Behance</a></li>
+        <li><a href="#">Pinterest</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Surface Studio · Tous droits réservés</span>
+    <span>Sidi Ghanem · Marrakech · Maroc</span>
+  </div>
+</footer>
+
+<!-- ═══════════════ LIGHTBOX PRODUITS ═══════════════ -->
+<div class="lightbox" id="catLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Aperçu produit">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">×</button>
+  <figure class="lightbox-figure">
+    <img class="lightbox-img" id="lightboxImg" alt="">
+    <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
+  </figure>
+</div>
+
+<script>
+/* ═══════════════ LIGHTBOX — NOS PRODUITS ═══════════════ */
+(function(){
+  const lb       = document.getElementById('catLightbox');
+  const lbImg    = document.getElementById('lightboxImg');
+  const lbCap    = document.getElementById('lightboxCaption');
+  const lbClose  = document.getElementById('lightboxClose');
+  if(!lb) return;
+  let lastFocus = null;
+
+  function open(src, alt, label){
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lbCap.textContent = label || alt || '';
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    setTimeout(()=>{ lbImg.removeAttribute('src'); }, 300);
+    if(lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('#catalogue .cat-img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lastFocus = document.activeElement;
+      const card = img.closest('.cat-card');
+      const num  = card ? card.querySelector('.cat-num') : null;
+      open(img.currentSrc || img.src, img.alt, num ? num.textContent.trim() : img.alt);
+      lbClose.focus();
+    });
+  });
+
+  lbClose.addEventListener('click', close);
+  lb.addEventListener('click', (e) => { if(e.target === lb) close(); });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && lb.classList.contains('open')) close();
+  });
+})();
+</script>
+
+<script>
+function showFormSuccess(){
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  if(form) form.classList.add('hide');
+  if(success) success.classList.add('show');
+}
+
+(function(){
+  const form = document.getElementById('contactForm');
+  if(!form) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.form-submit');
+    const originalLabel = btn ? btn.innerHTML : '';
+    if(btn){ btn.disabled = true; btn.textContent = 'Envoi en cours…'; }
+    try{
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if(res.ok){
+        showFormSuccess();           // garde le message de succès actuel
+      } else {
+        let msg = 'Une erreur est survenue. Réessayez ou écrivez-nous directement par email.';
+        try{
+          const data = await res.json();
+          if(data && data.errors && data.errors.length){
+            msg = data.errors.map(er => er.message).join(' ');
+          }
+        }catch(_){}
+        if(btn){ btn.disabled = false; btn.innerHTML = originalLabel; }
+        alert(msg);
+      }
+    }catch(err){
+      if(btn){ btn.disabled = false; btn.innerHTML = originalLabel; }
+      alert('Connexion impossible. Vérifiez votre réseau et réessayez.');
+    }
+  });
+})();
+const nav = document.getElementById('nav');
+const heroEl = document.querySelector('.hero');
+
+window.addEventListener('scroll', () => {
+  const scrollPos = window.scrollY;
+  const heroHeight = heroEl ? heroEl.offsetHeight : 0;
+
+  if (scrollPos > heroHeight - 100) {
+    // Passé le hero : nav blanche
+    nav.classList.remove('over-hero');
+    nav.classList.add('scrolled');
+  } else if (scrollPos > 30) {
+    // Encore sur le hero mais on a scrollé un peu
+    nav.classList.add('over-hero');
+    nav.classList.remove('scrolled');
+  } else {
+    // Tout en haut
+    nav.classList.add('over-hero');
+    nav.classList.remove('scrolled');
+  }
+});
+
+const burger = document.getElementById('burger');
+const navMobile = document.getElementById('nav-mobile');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  navMobile.classList.toggle('open');
+  document.body.style.overflow = navMobile.classList.contains('open') ? 'hidden' : '';
+});
+navMobile.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    navMobile.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+const reveals = document.querySelectorAll('.reveal, [class*="reveal-d"]');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+/* ═══════════════ CAROUSEL CATALOGUE ═══════════════ */
+const carousel = document.getElementById('catCarousel');
+const btnPrev = document.getElementById('catPrev');
+const btnNext = document.getElementById('catNext');
+const progFill = document.getElementById('catProgress');
+const progCurrent = document.getElementById('catCurrent');
+
+if (carousel && btnPrev && btnNext) {
+  const cardWidth = () => {
+    const card = carousel.querySelector('.cat-card');
+    if (!card) return 376;
+    const style = window.getComputedStyle(carousel);
+    const gap = parseInt(style.gap) || 24;
+    return card.offsetWidth + gap;
+  };
+
+  // Boutons prev/next
+  btnPrev.addEventListener('click', () => {
+    carousel.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+  });
+  btnNext.addEventListener('click', () => {
+    carousel.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+  });
+
+  // Mise à jour de la progression
+  const updateProgress = () => {
+    const max = carousel.scrollWidth - carousel.clientWidth;
+    if (max <= 0) {
+      if (progFill) progFill.style.width = '100%';
+      if (progCurrent) progCurrent.textContent = '13';
+      btnPrev.disabled = true;
+      btnNext.disabled = true;
+      return;
+    }
+    const ratio = Math.max(0, Math.min(1, carousel.scrollLeft / max));
+    if (progFill) progFill.style.width = (ratio * 100) + '%';
+
+    // Calculer la carte courante (13 produits au total)
+    const totalCards = 13;
+    const current = Math.min(totalCards, Math.round(ratio * (totalCards - 1)) + 1);
+    if (progCurrent) progCurrent.textContent = String(current).padStart(2, '0');
+
+    // Désactiver les boutons aux extrémités
+    btnPrev.disabled = carousel.scrollLeft <= 5;
+    btnNext.disabled = carousel.scrollLeft >= max - 5;
+  };
+  carousel.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  setTimeout(updateProgress, 100);
+
+  // Drag-to-scroll (souris)
+  let isDown = false;
+  let moved = false;
+  let startX = 0;
+  let scrollStart = 0;
+
+  carousel.addEventListener('mousedown', (e) => {
+    isDown = true;
+    moved = false;
+    startX = e.pageX - carousel.offsetLeft;
+    scrollStart = carousel.scrollLeft;
+  });
+  carousel.addEventListener('mouseleave', () => {
+    isDown = false;
+    carousel.classList.remove('dragging');
+  });
+  carousel.addEventListener('mouseup', () => {
+    isDown = false;
+    carousel.classList.remove('dragging');
+  });
+  // Si l'utilisateur a glissé, on absorbe le clic qui suit (évite d'ouvrir la lightbox)
+  carousel.addEventListener('click', (e) => {
+    if (moved){
+      e.stopPropagation();
+      e.preventDefault();
+      moved = false;
+    }
+  }, true);
+  carousel.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    // N'active le mode glissement qu'au-delà d'un petit seuil — un simple clic reste un clic
+    if (!moved && Math.abs(walk) > 6){
+      moved = true;
+      carousel.classList.add('dragging');
+    }
+    if (moved){
+      e.preventDefault();
+      carousel.scrollLeft = scrollStart - walk;
+    }
+  });
+
+  // Navigation clavier (flèches)
+  carousel.setAttribute('tabindex', '0');
+  carousel.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      carousel.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      carousel.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+    }
+  });
+}
+</script>
+
+<script>
+/* ═══════════════ HERO — TOUJOURS VISIBLE EN ENTIER (fit-to-viewport) ═══════════════ */
+(function(){
+  const inner   = document.querySelector('.hero-inner');
+  const content = document.querySelector('.hero-content');
+  if(!inner || !content) return;
+
+  function fitHero(){
+    content.style.transform = 'none';
+    const cs = getComputedStyle(inner);
+    const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
+    const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+    const availW = inner.clientWidth  - padX;
+    const availH = inner.clientHeight - padY;
+    const rect = content.getBoundingClientRect();
+    if(rect.width === 0 || rect.height === 0) return;
+    const scale = Math.min(1, availW / rect.width, availH / rect.height);
+    content.style.transformOrigin = 'center center';
+    content.style.transform = 'scale(' + scale + ')';
+  }
+
+  // Recalcule au chargement, au resize, à la rotation et après le chargement des polices
+  const run = () => requestAnimationFrame(fitHero);
+  run();
+  window.addEventListener('resize', run);
+  window.addEventListener('orientationchange', run);
+  window.addEventListener('load', run);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(run); }
+  // Les éléments du hero ont des animations d'entrée — on refait l'ajustement après
+  setTimeout(run, 700);
+  setTimeout(run, 1600);
+})();
+</script>
+
+<!-- ═══════════════ BOUTON WHATSAPP FLOTTANT ═══════════════ -->
+<a class="wa-float" href="https://wa.me/212600000000" target="_blank" rel="noopener" aria-label="Nous contacter sur WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M16.04 4C9.93 4 4.97 8.96 4.97 15.07c0 1.95.51 3.86 1.48 5.55L4.8 27.2l6.74-1.62a11.03 11.03 0 0 0 4.5.96h.01c6.1 0 11.06-4.96 11.06-11.07C27.11 8.96 22.15 4 16.04 4Zm0 20.27h-.01c-1.4 0-2.78-.38-3.98-1.09l-.29-.17-3.99.96.95-3.89-.19-.3a9.18 9.18 0 0 1-1.41-4.89c0-5.07 4.13-9.2 9.21-9.2 2.46 0 4.77.96 6.51 2.7a9.13 9.13 0 0 1 2.69 6.51c0 5.08-4.13 9.21-9.2 9.21Zm5.05-6.89c-.28-.14-1.64-.81-1.89-.9-.25-.09-.44-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.38-.82-.74-1.38-1.65-1.54-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.06-.22-.54-.45-.46-.62-.47-.16-.01-.35-.01-.53-.01-.18 0-.49.07-.74.35-.25.28-.97.95-.97 2.31s1 2.68 1.13 2.86c.14.18 1.96 3 4.75 4.21.66.29 1.18.46 1.58.59.66.21 1.27.18 1.75.11.53-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33Z"/>
+  </svg>
+</a>
+
+</body>
+</html>
